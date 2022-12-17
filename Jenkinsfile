@@ -45,7 +45,7 @@ pipeline {
             echo 'This will run only if successful'
         }
         failure {
-            echo 'This will run only if failed'
+            echo 'This will run only if failed  test'
             powershell 'docker-compose -p store-management up -d'
         }
         unstable {
