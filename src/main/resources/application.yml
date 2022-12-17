@@ -1,0 +1,46 @@
+management:
+    security:
+        enabled: false
+
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+    endpoint:
+        env:
+            enabled: true
+security:
+    basic:
+        enabled: false
+
+spring:
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    datasource:
+        url: jdbc:mysql://host.docker.internal:3036/storeman?createDatabaseIfNotExist=true
+        username: root
+        password: my-secret-pw
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        #        database: SQL_SERVER
+        open-in-view: false
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+
+
+
+lang:
+    secondary: ar
+
+
+server:
+    servlet.contextPath: /store-management
+    port: 8088
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+        min-response-size: 1024
